@@ -17,41 +17,85 @@ title_font = wx.Font(16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIG
 result_font = wx.Font(14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL)
 
 # Title
-title = wx.StaticText(panel, label="BMI Calculator", pos=(150, 20))
+title = wx.StaticText(panel, label="BMI Calculator")
 title.SetFont(title_font)
 
 # Unit system selection
-unit_label = wx.StaticText(panel, label="Select Unit System:", pos=(50, 70))
-unit_choice = wx.Choice(panel, choices=["Metric (kg, cm)", "Imperial (lbs, inches)"], pos=(200, 65))
+unit_label = wx.StaticText(panel, label="Select Unit System:")
+unit_choice = wx.Choice(panel, choices=["Metric (kg, cm)", "Imperial (lbs, inches)"])
 unit_choice.SetSelection(0)  # Default to metric
 
-# Input fields - FIXED: Correct positions
-height_label = wx.StaticText(panel, label="Height:", pos=(50, 120))
-height_input = wx.TextCtrl(panel, pos=(200, 115), size=(100, -1))  # Changed from 155 to 115
+# Input fields
+height_label = wx.StaticText(panel, label="Height:")
+height_input = wx.TextCtrl(panel, size=(100, -1))
 
-weight_label = wx.StaticText(panel, label="Weight:", pos=(50, 160))
-weight_input = wx.TextCtrl(panel, pos=(200, 155), size=(100, -1))  # Changed from 115 to 155
+weight_label = wx.StaticText(panel, label="Weight:")
+weight_input = wx.TextCtrl(panel, size=(100, -1))
 
 # Unit labels that will update based on selection
-height_unit = wx.StaticText(panel, label="cm", pos=(310, 120))
-weight_unit = wx.StaticText(panel, label="kg", pos=(310, 160))
+height_unit = wx.StaticText(panel, label="cm")
+weight_unit = wx.StaticText(panel, label="kg")
 
 # Calculate button
-calculate_btn = wx.Button(panel, label="Calculate BMI", pos=(180, 210))
+calculate_btn = wx.Button(panel, label="Calculate BMI")
+
+# Clear button
+clear_btn = wx.Button(panel, label="Clear")
 
 # Result display
-result_label = wx.StaticText(panel, label="Your BMI:", pos=(50, 270))
-result_display = wx.StaticText(panel, label="", pos=(200, 270))
+result_label = wx.StaticText(panel, label="Your BMI:")
+result_display = wx.StaticText(panel, label="")
 result_display.SetFont(result_font)
 
 # Category display
-category_label = wx.StaticText(panel, label="Category:", pos=(50, 310))
-category_display = wx.StaticText(panel, label="", pos=(200, 310))
+category_label = wx.StaticText(panel, label="Category:")
+category_display = wx.StaticText(panel, label="")
 category_display.SetFont(result_font)
 
 # BMI Categories reference
-categories_label = wx.StaticText(panel, label="BMI Categories:", pos=(50, 370))
-categories_text = wx.StaticText(panel, label="Underweight: < 18.5\nNormal weight: 18.5 - 24.9\nOverweight: 25 - 29.9\nObesity: ≥ 30", pos=(50, 400))
+categories_label = wx.StaticText(panel, label="BMI Categories:")
+categories_text = wx.StaticText(panel, label="Underweight: < 18.5\nNormal weight: 18.5 - 24.9\nOverweight: 25 - 29.9\nObesity: ≥ 30")
+
+# Create a GridSizer for better layout
+grid_sizer = wx.GridBagSizer(10, 15)  # Vertical and horizontal gaps
+
+# Add widgets to the GridSizer
+grid_sizer.Add(title, pos=(0, 0), span=(1, 4), flag=wx.ALIGN_CENTER | wx.TOP, border=20)
+grid_sizer.Add(unit_label, pos=(1, 0), flag=wx.ALIGN_CENTER_VERTICAL | wx.LEFT, border=20)
+grid_sizer.Add(unit_choice, pos=(1, 1), span=(1, 2), flag=wx.EXPAND)
+
+grid_sizer.Add(height_label, pos=(2, 0), flag=wx.ALIGN_CENTER_VERTICAL | wx.LEFT, border=20)
+grid_sizer.Add(height_input, pos=(2, 1), flag=wx.EXPAND)
+grid_sizer.Add(height_unit, pos=(2, 2), flag=wx.ALIGN_CENTER_VERTICAL)
+
+grid_sizer.Add(weight_label, pos=(3, 0), flag=wx.ALIGN_CENTER_VERTICAL | wx.LEFT, border=20)
+grid_sizer.Add(weight_input, pos=(3, 1), flag=wx.EXPAND)
+grid_sizer.Add(weight_unit, pos=(3, 2), flag=wx.ALIGN_CENTER_VERTICAL)
+
+# Button row
+grid_sizer.Add(calculate_btn, pos=(4, 1), flag=wx.EXPAND | wx.TOP, border=15)
+grid_sizer.Add(clear_btn, pos=(4, 2), flag=wx.EXPAND | wx.TOP, border=15)
+
+# Results
+grid_sizer.Add(result_label, pos=(5, 0), flag=wx.ALIGN_CENTER_VERTICAL | wx.LEFT, border=20)
+grid_sizer.Add(result_display, pos=(5, 1), span=(1, 2), flag=wx.ALIGN_CENTER_VERTICAL | wx.LEFT, border=10)
+
+grid_sizer.Add(category_label, pos=(6, 0), flag=wx.ALIGN_CENTER_VERTICAL | wx.LEFT, border=20)
+grid_sizer.Add(category_display, pos=(6, 1), span=(1, 2), flag=wx.ALIGN_CENTER_VERTICAL | wx.LEFT, border=10)
+
+# Categories reference
+grid_sizer.Add(categories_label, pos=(7, 0), flag=wx.TOP, border=30)
+grid_sizer.Add(categories_text, pos=(8, 0), span=(1, 3), flag=wx.LEFT, border=20)
+
+# Configure column proportions
+grid_sizer.AddGrowableCol(1)
+
+# Create a main sizer for the panel
+main_sizer = wx.BoxSizer(wx.VERTICAL)
+main_sizer.Add(grid_sizer, 1, wx.EXPAND | wx.ALL, 10)
+
+# Set the sizer for the panel
+panel.SetSizer(main_sizer)
 
 # Function to update unit labels
 def update_units(event):
@@ -63,7 +107,7 @@ def update_units(event):
         height_unit.SetLabel("inches")
         weight_unit.SetLabel("lbs")
 
-# Function to calculate BMI - FIXED: Correct metric calculation
+# Function to calculate BMI
 def calculate_bmi(event):
     # Get selected unit system
     is_metric = (unit_choice.GetSelection() == 0)
@@ -77,7 +121,7 @@ def calculate_bmi(event):
         result_display.SetLabel("Please enter both values")
         result_display.SetForegroundColour(wx.Colour(255, 0, 0))  # Red for error
         category_display.SetLabel("")
-    
+        return
     
     try:
         height = float(height_str)
@@ -87,14 +131,15 @@ def calculate_bmi(event):
             result_display.SetLabel("Values must be positive")
             result_display.SetForegroundColour(wx.Colour(255, 0, 0))  # Red for error
             category_display.SetLabel("")
+            return
     
     except ValueError:
         result_display.SetLabel("Invalid number format")
         result_display.SetForegroundColour(wx.Colour(255, 0, 0))  # Red for error
         category_display.SetLabel("")
-
+        return
     
-    # Calculate BMI based on unit system - FIXED: Correct metric formula
+    # Calculate BMI based on unit system
     if is_metric:
         # Metric: BMI = weight(kg) / (height(m))^2
         # Convert cm to meters: height in cm / 100
@@ -135,9 +180,6 @@ def clear_inputs(event):
     weight_input.SetValue("")
     result_display.SetLabel("")
     category_display.SetLabel("")
-
-# Clear button
-clear_btn = wx.Button(panel, label="Clear", pos=(300, 210))
 
 # Bind events
 unit_choice.Bind(wx.EVT_CHOICE, update_units)
