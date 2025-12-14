@@ -120,8 +120,11 @@ Integrate animations or improved color themes
 👥 Team Members
 
 •	Chandru G,     SRN: PES1UG25AM086
-•	Karthik. K. R, SRN; PES1UG25AM167
+
+•	Karthik. K. R, SRN: PES1UG25AM167
+
 •	Bhavith V C,   SRN: PES1UG25EC061
+
 •	Daksh Nayak,   SRN:
 
 💡 Why We Built This
