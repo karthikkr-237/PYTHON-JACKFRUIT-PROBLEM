@@ -65,7 +65,6 @@ Finally, the GUI became stable and clean.
 ```
 /
 ├── BMI Calculator.py
-├── bmi_history.txt
 ├── README.md
 └── assets/ (optional screenshots)
 ```
@@ -112,11 +111,11 @@ Each of these forced us to think, experiment, and improve our understanding of G
 ---
 
 ## 👥 Team Members  
-*(Replace placeholders with real names and SRNs)*  
-- Member 1 – SRN – Section  
-- Member 2 – SRN – Section  
-- Member 3 – SRN – Section  
-- Member 4 – SRN – Section  
+  
+- Chandru G – SRN : PES1UG25AM086  
+- Karthik. K. R – SRN : PES1UG25AM167 
+- Bhavith V C – SRN : PES1UG25EC061  
+- Daksh Nayak – SRN : PES1UG25AM103  
 
 ---
 
