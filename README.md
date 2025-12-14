@@ -58,11 +58,14 @@ Maintain UI consistency during window resize
 [BMI Calculator Screenshot]("C:\Users\KARTHIK K R\Desktop\Images")
 
 📂 File Structure
-/
+
 ├── bmi_history.txt
+
 ├── BMI Calculator.py
+
 ├── README.md
-└── assets/ (optional for screenshots)
+
+└── assets 
 
 ▶ Running the Project
 1. Install wxPython
