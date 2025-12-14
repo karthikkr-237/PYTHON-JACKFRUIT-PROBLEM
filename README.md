@@ -66,7 +66,7 @@ Finally, the GUI became stable and clean.
 /
 ├── BMI Calculator.py
 ├── README.md
-└── assets/ (optional screenshots)
+└── assets/ 
 ```
 
 ---
