@@ -55,7 +55,7 @@ Maintain UI consistency during window resize
 
 📷 Screenshots
 
-![BMI Calculator Screenshot](path/to/image.png)
+[BMI Calculator Screenshot]("C:\Users\KARTHIK K R\Desktop\Images")
 
 📂 File Structure
 /
@@ -125,7 +125,7 @@ Integrate animations or improved color themes
 
 •	Bhavith V C,   SRN: PES1UG25EC061
 
-•	Daksh Nayak,   SRN:
+•	Daksh Nayak,   SRN: PES1UG25AM103
 
 💡 Why We Built This
 
