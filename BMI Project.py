@@ -163,9 +163,7 @@ def on_calculate(event):
     tip_label. Wrap(430)
 
     save_result_to_file(height_text, weight_text, unit_mode, bmi, category)
-    history_info_label.SetLabel(
-        "Saved to bmi_history. txt (in the same folder as this program)."
-    )
+    history_info_label.SetLabel("Saved to bmi_history. txt (in the same folder as this program).")
     history_info_label. Wrap(430)
 
     # ========== FIX: Update layout after calculating ==========
@@ -180,13 +178,11 @@ def on_view_history(event):
         with open("bmi_history.txt", "r", encoding="utf-8") as f:
             content = f.read()
     except FileNotFoundError:
-        wx. MessageBox("No history found yet. Calculate at least one BMI first.",
-                      "History", wx.OK | wx.ICON_INFORMATION)
+        wx. MessageBox("No history found yet. Calculate at least one BMI first.", "History", wx.OK | wx.ICON_INFORMATION)
         return
 
     if content. strip() == "":
-        wx.MessageBox("History file is empty.", "History",
-                      wx. OK | wx. ICON_INFORMATION)
+        wx.MessageBox("History file is empty.", "History", wx. OK | wx. ICON_INFORMATION)
         return
 
     wx.MessageBox(content, "BMI History", wx. OK | wx. ICON_INFORMATION)
@@ -306,4 +302,5 @@ panel.Layout()
 
 frame.Centre()
 frame.Show()
+
 app.MainLoop()
