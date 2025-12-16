@@ -1201,11 +1201,11 @@ class BMICalculator(wx.Frame):
     def on_about(self, event):
         """Show about dialog"""
         info = wx.adv.AboutDialogInfo()
-        info.SetName("BMI Health Assistant")
+        info.SetName("Report")
         info.SetVersion("2.0")
         info.SetDescription("A comprehensive BMI calculator with metric/imperial unit support,\npersonalized health tips, activity tracking, and individual trend analysis.")
-        info.SetCopyright("(C) 2024")
-        info.SetWebSite("https://github.com/yourusername/bmi-health-assistant")
+        info.SetCopyright("(@) 2025")
+        info.SetWebSite("README.md")
         
         wx.adv.AboutBox(info)
     
@@ -1221,3 +1221,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
