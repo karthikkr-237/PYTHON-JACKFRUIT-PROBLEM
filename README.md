@@ -141,7 +141,7 @@ Here's what we plan to enhance next:
 ---
 
 ## 🙌 Meet the Team
-*(Add your team details here, replacing placeholders)*  
+ 
 - **Chandru G**    –  PES1UG25AM086   
 - **Karthik K R**  –  PES1UG25AM167
 - **Daksh Nayak**  –  PES1UG25AM103 
