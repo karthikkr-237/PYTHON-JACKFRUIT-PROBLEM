@@ -1,4 +1,4 @@
-# 🚀 BMI Calculator – Python (wxPython GUI)
+# 🚀 BMI Calculator
 
 A powerful and elegant **BMI Calculator** built with **Python** and **wxPython**, designed to help users monitor and improve their health. This project is a proof of our teamwork, learning, and innovation over long hours of development.
 
@@ -58,7 +58,6 @@ We designed the GUI using **wxPython**, with key GUI components as:
 ```
 /
 ├── BMI_Calculator.py   # Main application script
-├── bmi_history.txt     # Auto-saved BMI records
 ├── README.md           # Project documentation
 └── assets/             # [Optional] Screenshots and media
 ```
@@ -143,11 +142,11 @@ Here's what we plan to enhance next:
 
 ## 🙌 Meet the Team
 *(Add your team details here, replacing placeholders)*  
-- **[Name 1]** – SRN – Contribution  
-- **[Name 2]** – SRN – Contribution  
-- **[Name 3]** – SRN – Contribution  
-- **[Name 4]** – SRN – Contribution  
-
+- **Chandru G**    –  PES1UG25AM086   
+- **Karthik K R**  –  PES1UG25AM167
+- **Daksh Nayak**  –  PES1UG25AM103 
+- **Bhavith V C ** –  PES1UG25EC061
+  
 *Together we built something more than just a project — a tool for health!*
 
 ---
