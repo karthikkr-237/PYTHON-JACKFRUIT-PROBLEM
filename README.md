@@ -145,7 +145,7 @@ Here's what we plan to enhance next:
 - **Chandru G**    –  PES1UG25AM086   
 - **Karthik K R**  –  PES1UG25AM167
 - **Daksh Nayak**  –  PES1UG25AM103 
-- **Bhavith V C ** –  PES1UG25EC061
+- **Bhavith V C** –  PES1UG25EC061
   
 *Together we built something more than just a project — a tool for health!*
 
