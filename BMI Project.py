@@ -243,7 +243,7 @@ class BMICalculator(wx.Frame):
             no_chart_label = wx.StaticText(right_panel, label="Install matplotlib for charts")
             right_sizer.Add(no_chart_label, 0, wx.ALIGN_CENTER | wx.ALL, 20)
         
-        history_box = wx.StaticBox(right_panel, label="Calculation History (Stored in Metric)")
+        history_box = wx.StaticBox(right_panel, label="Calculation History")
         history_sizer = wx.StaticBoxSizer(history_box, wx.VERTICAL)
         self.history_grid = wx.grid.Grid(right_panel)
         self.history_grid.CreateGrid(0, 7)
@@ -605,3 +605,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
